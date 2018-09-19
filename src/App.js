@@ -51,10 +51,12 @@ const drums = [{
 
 const activeStyle = {
   backgroundColor: 'orange',
+  animationName: 'bounce',
+  animationDuration: '100ms'
 }
 
 const inactiveStyle = {
-  backgroundColor: 'grey',
+  backgroundColor: 'grey'
 }
 
 class Drum extends React.Component {
@@ -95,6 +97,7 @@ class Drum extends React.Component {
     // Change drum styling for set number of milliseconds, before changing back
     this.activatePad();
     setTimeout(() => this.activatePad(), 100);
+    // Format clip name for display
     this.props.updateDisplay(this.props.clipId.replace(/-/g, ' '));
   }
   render() {
@@ -104,16 +107,13 @@ class Drum extends React.Component {
         className="drum-pad"
         style={this.state.padStyle} >
         <audio className='clip' id={this.props.keyTrigger} src={this.props.clip}></audio>
-        {this.props.keyTrigger}
+        <h2>{this.props.keyTrigger}</h2>
       </div>
     )
   }
 }
 
 class DrumSet extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     let drumSet = drums.map((drumObj, i, drumSetArray) => {
       return (
