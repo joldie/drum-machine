@@ -50,13 +50,13 @@ const drums = [{
 ];
 
 const activeStyle = {
-  backgroundColor: 'orange',
+  backgroundColor: '#FFEE58',
   animationName: 'bounce',
   animationDuration: '100ms'
 }
 
 const inactiveStyle = {
-  backgroundColor: 'grey'
+  backgroundColor: 'white'
 }
 
 class Drum extends React.Component {
@@ -81,7 +81,7 @@ class Drum extends React.Component {
     }
   }
   activatePad() {
-    this.state.padStyle.backgroundColor === 'orange' ?
+    this.state.padStyle.backgroundColor === activeStyle.backgroundColor ?
       this.setState({
         padStyle: inactiveStyle
       }) :
@@ -107,7 +107,7 @@ class Drum extends React.Component {
         className="drum-pad"
         style={this.state.padStyle} >
         <audio className='clip' id={this.props.keyTrigger} src={this.props.clip}></audio>
-        <h2>{this.props.keyTrigger}</h2>
+        <h1>{this.props.keyTrigger}</h1>
       </div>
     )
   }
@@ -150,8 +150,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="page-wrapper">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></link>
         <header>
-          <h1>Drum Machine</h1>
+          <h1><i class="fas fa-drum"></i> Drum Machine</h1>
         </header>
         <div id="drum-machine">
           <div className="drum-set-wrapper">

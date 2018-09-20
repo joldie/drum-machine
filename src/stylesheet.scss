@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
-$fonts: 'Cutive Mono',
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+$fonts: 'Poiret One',
 sans-serif;
-$primary-color: #000;
-$alt-color: #fff;
+$primary-color: #fff;
+$alt-color: #000;
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body,
   width: 100%;
   min-width: 320px;
   font-family: $fonts;
-  background: $alt-color;
+  background-image: url('img/neon-background.jpg');
   color: $primary-color;
 }
 
@@ -27,6 +27,7 @@ body,
   justify-content: center;
   align-items: center;
   header {
+    font-size: 150%;
     position: fixed;
     top: 0;
     margin: 2%;
@@ -56,6 +57,7 @@ body,
           height: 90%;
           justify-self: center;
           align-self: center;
+          color: $alt-color;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -66,6 +68,7 @@ body,
     .drum-text {
       display: flex;
       justify-content: center;
+      font-weight: bold;
     }
   }
   footer {
@@ -88,5 +91,11 @@ body,
   50% {
     width: 100%;
     height: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    font-size: 100% !important;
   }
 }
